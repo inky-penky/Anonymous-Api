@@ -1,9 +1,17 @@
-import express from 'express'
-import { serverResponse } from './utils'
+import express, { json, urlencoded } from 'express'
+import morgan from 'morgan'
+import cors from 'cors'
+import helmet from 'helmet'
 
+import { serverResponse } from './utils'
 import apiRoutes from './routes'
 
 const app = express()
+app.use(morgan('dev'))
+app.use(cors())
+app.use(helmet())
+app.use(json())
+app.use(urlencoded())
 
 app.use('/api/v1', apiRoutes)
 app.use('/v1', apiRoutes)
