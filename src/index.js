@@ -2,7 +2,7 @@ import express, { json } from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import helmet from 'helmet'
-import mongoose, { mongo } from 'mongoose'
+import mongoose from 'mongoose'
 
 import { serverResponse } from './utils'
 import apiRoutes from './routes'

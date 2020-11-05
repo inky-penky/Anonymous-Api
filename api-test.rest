@@ -1,0 +1,16 @@
+@host = http://localhost:9090
+@api = {{host}}/api/v1
+
+GET {{host}}
+
+###
+GET {{api}}
+
+###
+POST {{api}}/signup
+Content-Type: application/json
+
+{
+  "username": "gandia",
+  "password": "hellobae"
+}
