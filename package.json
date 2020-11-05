@@ -1,0 +1,51 @@
+{
+  "name": "anonymous-api",
+  "version": "1.0.0",
+  "description": "Drop messages with no trace",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node src",
+    "start": "node dist/",
+    "lint": "./node_modules/.bin/eslint . --fix",
+    "build": "npm run lint && babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inky-penky/Anonymous-Api.git"
+  },
+  "keywords": [
+    "Anonymous",
+    "Messaging",
+    "API"
+  ],
+  "author": "Ahmad Abdulazeez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inky-penky/Anonymous-Api/issues"
+  },
+  "homepage": "https://github.com/inky-penky/Anonymous-Api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-transform-async-to-generator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.12",
+    "morgan": "^1.10.0"
+  }
+}
