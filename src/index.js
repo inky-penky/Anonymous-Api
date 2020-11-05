@@ -1,17 +1,28 @@
-import express, { json, urlencoded } from 'express'
+import express, { json } from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import helmet from 'helmet'
+import mongoose, { mongo } from 'mongoose'
 
 import { serverResponse } from './utils'
 import apiRoutes from './routes'
+import { dbURL } from './utils/config'
 
 const app = express()
+
+mongoose.connect(dbURL, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+})
+const db = mongoose.connection
+db.on('error', err => console.error(err))
+db.once('open', () => console.log('DB connection successful!'))
+
 app.use(morgan('dev'))
 app.use(cors())
 app.use(helmet())
 app.use(json())
-app.use(urlencoded())
 
 app.use('/api/v1', apiRoutes)
 app.use('/v1', apiRoutes)

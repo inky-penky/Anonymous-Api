@@ -1,5 +1,6 @@
 /* eslint-disable default-param-last */
 import jwt from 'jsonwebtoken'
+import bcrypt from 'bcryptjs'
 import { tokenSecret } from './config'
 
 export const createToken = (data) => {
@@ -24,3 +25,7 @@ export const serverResponse = (res, data, status = 200, err) => {
     res.status(status).json(data)
   }
 }
+
+export const hashPassword = (pswd) => bcrypt.hashSync(pswd, 2)
+
+export const checkPassword = (pswd, hash) => bcrypt.compareSync(pswd, hash)
