@@ -14,3 +14,20 @@ Content-Type: application/json
   "username": "gandia",
   "password": "hellobae"
 }
+
+###
+POST  {{api}}/login
+Content-Type: application/json
+
+{
+  "username": "gandia",
+  "password": "hellobae"
+}
+
+###
+POST {{api}}/gandia
+Content-Type: application/json
+
+{
+  "message": "oya na"
+}
